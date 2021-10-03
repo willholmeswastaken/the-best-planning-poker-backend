@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[1.4.26, )"
             },
+            "Akka.DependencyInjection": {
+              "target": "Package",
+              "version": "[1.4.26, )"
+            },
             "Akka.Persistence": {
               "target": "Package",
               "version": "[1.4.26, )"

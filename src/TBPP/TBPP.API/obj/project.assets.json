@@ -17,6 +17,19 @@
           "lib/netstandard2.0/Akka.dll": {}
         }
       },
+      "Akka.DependencyInjection/1.4.26": {
+        "type": "package",
+        "dependencies": {
+          "Akka": "1.4.26",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Akka.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Akka.DependencyInjection.dll": {}
+        }
+      },
       "Akka.Persistence/1.4.26": {
         "type": "package",
         "dependencies": {
@@ -48,6 +61,15 @@
         "buildMultiTargeting": {
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {
@@ -303,6 +325,19 @@
         "lib/netstandard2.0/Akka.xml"
       ]
     },
+    "Akka.DependencyInjection/1.4.26": {
+      "sha512": "9tw/z/gCZR27wy4nHmZO2lU77+JxXJePaVV4Jcs4isp+n0AQ0mLy4WGrR6f/RqRCyjiZRggLTM1aEwaKoaNcbQ==",
+      "type": "package",
+      "path": "akka.dependencyinjection/1.4.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "akka.dependencyinjection.1.4.26.nupkg.sha512",
+        "akka.dependencyinjection.nuspec",
+        "lib/netstandard2.0/Akka.DependencyInjection.dll",
+        "lib/netstandard2.0/Akka.DependencyInjection.xml"
+      ]
+    },
     "Akka.Persistence/1.4.26": {
       "sha512": "POr7FOLvhVGYUVZKC29vCoeyjFhS/cAHAmH7mpEtHkcdQlYc/5Uwg2aKO6a3AVtLMwVMd1dmEggK+xUADddS2A==",
       "type": "package",
@@ -364,6 +399,20 @@
         "tools/netcoreapp2.1/GetDocument.Insider.deps.json",
         "tools/netcoreapp2.1/GetDocument.Insider.dll",
         "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0": {
+      "sha512": "44rDtOf1JXXAFpNT2EXMExaDm/4OJ2RXOL9i9lE4bK427nzC7Exphv+beB6IgluyE2GIoo8zezTStMXI7MQ8WA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "packageIcon.png"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -862,6 +911,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Akka >= 1.4.26",
+      "Akka.DependencyInjection >= 1.4.26",
       "Akka.Persistence >= 1.4.26",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -906,6 +956,10 @@
         "targetAlias": "net5.0",
         "dependencies": {
           "Akka": {
+            "target": "Package",
+            "version": "[1.4.26, )"
+          },
+          "Akka.DependencyInjection": {
             "target": "Package",
             "version": "[1.4.26, )"
           },

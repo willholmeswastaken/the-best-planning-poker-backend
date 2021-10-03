@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "aqFV+WIsdcJHuRVPcrFX2xwJvxVdOoa1pkKAFrH3r7TOSTNbQcfI+TkRVwmAPbOMhBodjpL0h07NECOL6QodQQ==",
+  "dgSpecHash": "BRXyQSCVuA6KTnOquejVKEQPXs9NDV/9acQF2/eh+g9pMy4O3l4kogem2gML+GWeO0OcHQ4Xt7y+jC/NiKewbA==",
   "success": true,
   "projectFilePath": "D:\\Repos\\the-best-planning-poker-backend\\src\\TBPP\\TBPP.API\\TBPP.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\willh\\.nuget\\packages\\akka\\1.4.26\\akka.1.4.26.nupkg.sha512",
+    "C:\\Users\\willh\\.nuget\\packages\\akka.dependencyinjection\\1.4.26\\akka.dependencyinjection.1.4.26.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\akka.persistence\\1.4.26\\akka.persistence.1.4.26.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\google.protobuf\\3.17.3\\google.protobuf.3.17.3.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\willh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.0\\microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\willh\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
