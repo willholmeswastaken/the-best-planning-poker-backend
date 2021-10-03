@@ -2,11 +2,12 @@
 using Akka.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using TBPP.API.Session;
+using TBPP.API.Session.Models;
 
 namespace TBPP.API
 {
@@ -14,17 +15,31 @@ namespace TBPP.API
     {
         public static void AddAkka(this IServiceCollection services)
         {
-            // add akka stuff
+            services.AddSingleton<IPokerRoomSessionHandler, AkkaService>();
+            services.AddHostedService(sp => (AkkaService)sp.GetRequiredService<IPokerRoomSessionHandler>());
         }
     }
-    public class AkkaService : IHostedService
+
+    public sealed class AkkaService : IHostedService, IPokerRoomSessionHandler
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IHostApplicationLifetime _hostApplicationLifetime;
+        private readonly ILogger<AkkaService> _logger;
         private ActorSystem _system;
+
+        public AkkaService(IServiceProvider serviceProvider, IHostApplicationLifetime applicationLifetime, ILogger<AkkaService> logger)
+        {
+            _serviceProvider = serviceProvider;
+            _hostApplicationLifetime = applicationLifetime;
+            _logger = logger;
+        }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
+            _logger.LogInformation("*******************");
+            _logger.LogInformation("Started AkkaService");
+            _logger.LogInformation("*******************");
+
             var serviceProviderSetup = ServiceProviderSetup.Create(_serviceProvider);
 
             var bootstrapSetup = BootstrapSetup.Create();
@@ -35,9 +50,14 @@ namespace TBPP.API
             return Task.CompletedTask;
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
+        public async Task StopAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await _system.Terminate();
+        }
+
+        public void Handle(IPokerRoomSessionMessage message)
+        {
+            
         }
     }
 }
